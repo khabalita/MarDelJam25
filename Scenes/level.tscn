@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwbd0ba3mhhwj"]
+
+[ext_resource type="PackedScene" uid="uid://qieqn2altupw" path="res://Scenes/player.tscn" id="1_tumq0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tumq0"]
+size = Vector2(440, 33)
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tumq0")]
+collision_layer = 2
+
+[node name="Area2D" type="RigidBody2D" parent="."]
+position = Vector2(3, 93)
+collision_mask = 2
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(220, 209.5)
+shape = SubResource("RectangleShape2D_tumq0")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -2.5
+offset_top = 189.0
+offset_right = 441.5
+offset_bottom = 229.0
+color = Color(0.25490198, 1, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(0.5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(-238, -110)
+scale = Vector2(1.5, 1.5)
+centered = false
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground2"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer"]
+position = Vector2(582, 368)
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground3"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+position = Vector2(582, 371)
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground4"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground4/ParallaxLayer"]
+position = Vector2(582, 368)
