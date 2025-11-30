@@ -112,6 +112,11 @@ shape = SubResource("CapsuleShape2D_vgqql")
 script = ExtResource("2_6t5aa")
 
 [node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
+limit_left = -50
+limit_top = -50
+limit_right = 5000
+limit_bottom = 750
+limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
