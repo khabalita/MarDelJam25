@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://qieqn2altupw"]
+[gd_scene load_steps=17 format=3 uid="uid://qieqn2altupw"]
 
 [ext_resource type="Script" uid="uid://c7xbkujhahrwp" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://sgo71gbsoc4p" path="res://Scripts/movement.gd" id="2_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://f78yxhp25mhm" path="res://Assets/Characters/Idle.png" id="2_vgqql"]
-[ext_resource type="Script" uid="uid://rya5b3xctjs6" path="res://Scripts/animation.gd" id="3_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://durvn8o4n3kow" path="res://Assets/Characters/Run.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://f78yxhp25mhm" path="res://Assets/Characters/Player/Idle.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://durvn8o4n3kow" path="res://Assets/Characters/Player/Run.png" id="3_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("2_vgqql")
@@ -63,7 +62,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -85,23 +84,25 @@ animations = [{
 "texture": SubResource("AtlasTexture_7dp3o")
 }],
 "loop": true,
-"name": &"run",
-"speed": 5.0
+"name": &"Run",
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
 radius = 6.0
-height = 20.0
+height = 28.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 0
 script = ExtResource("1_cvnsp")
 
-[node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, 2)
 sprite_frames = SubResource("SpriteFrames_f1ek2")
-animation = &"Idle"
-frame_progress = 0.25513345
+animation = &"Run"
+frame = 4
+frame_progress = 0.24180605
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 10)
@@ -110,10 +111,7 @@ shape = SubResource("CapsuleShape2D_vgqql")
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("2_6t5aa")
 
-[node name="Animation" type="Node" parent="."]
-script = ExtResource("3_6t5aa")
-
 [node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true

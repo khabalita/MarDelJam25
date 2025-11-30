@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f78yxhp25mhm"
-path="res://.godot/imported/Idle.png-b5588e585ed7afa967ca404bfa9944a0.ctex"
+uid="uid://dbk657s3kxitw"
+path="res://.godot/imported/fence_2.png-a0df4e5a0eda9df881a3bd20c0dea3d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-b5588e585ed7afa967ca404bfa9944a0.ctex"]
+source_file="res://Assets/WoodDecoration/fence_2.png"
+dest_files=["res://.godot/imported/fence_2.png-a0df4e5a0eda9df881a3bd20c0dea3d4.ctex"]
 
 [params]
 

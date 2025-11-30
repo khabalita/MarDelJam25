@@ -9,7 +9,7 @@ var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # UPDATE
 func _setup(body):
-	player = body;
+	player = body
 
 func _update(delta: float, direction: float):
 	apply_gravity(delta)
@@ -38,3 +38,5 @@ func apply_gravity(delta):
 	if not player.is_on_floor():
 		player.velocity.y += gravity * delta
 		player.velocity.y = clampf(player.velocity.y, -1200, 980)
+
+# ANIMATIONS

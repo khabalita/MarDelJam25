@@ -1,30 +1,35 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwbd0ba3mhhwj"]
 
-[ext_resource type="PackedScene" uid="uid://qieqn2altupw" path="res://Scenes/player.tscn" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://qieqn2altupw" path="res://Scenes/player.tscn" id="1_iukft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tumq0"]
-size = Vector2(440, 33)
+size = Vector2(1374, 109)
 
-[node name="Level" type="Node2D"]
+[node name="Game" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_tumq0")]
+[node name="Player" parent="." instance=ExtResource("1_iukft")]
+position = Vector2(24, 287)
 collision_layer = 2
+collision_mask = 1
 
 [node name="Area2D" type="RigidBody2D" parent="."]
-position = Vector2(3, 93)
-collision_mask = 2
+position = Vector2(6, 107)
+disable_mode = 1
+collision_mask = 0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(220, 209.5)
+position = Vector2(683, 264)
 shape = SubResource("RectangleShape2D_tumq0")
 
 [node name="ColorRect" type="ColorRect" parent="Area2D"]
-offset_left = -2.5
-offset_top = 189.0
-offset_right = 441.5
-offset_bottom = 229.0
-color = Color(0.25490198, 1, 1, 1)
+offset_left = 58.0
+offset_top = 238.0
+offset_right = 58.0
+offset_bottom = 238.0
+size_flags_horizontal = 0
+color = Color(0, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
